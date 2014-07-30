@@ -76,8 +76,8 @@ function DBStore() {
 		$("#db_store select").change(function(event) {
 			var isStale = $(event.target).find(":selected").hasClass("db_store_stale");
 			var warning = $(event.target).siblings(".db_store_stale_warning");
-			if (isStale) { warning.show(); }
-			else { warning.hide(); }
+			if (isStale) { warning.addClass("db_store_active"); }
+			else { warning.removeClass("db_store_active"); }
 		});
 	}
 	this.message = function(msg) {
