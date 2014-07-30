@@ -1,0 +1,2136 @@
+---
+:cane:
+  :total_violations: 55
+  :violations:
+    :line_style:
+    - :line: app/classes/db_storage/catalog.rb:3
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:4
+      :description: Line is >80 characters (90)
+    - :line: app/classes/db_storage/catalog.rb:6
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:11
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:16
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:21
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:25
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:29
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:32
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:41
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:43
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:47
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:51
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:57
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:61
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:64
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:65
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage/catalog.rb:70
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:3
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:4
+      :description: Line is >80 characters (90)
+    - :line: app/classes/db_storage.rb:5
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:17
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:24
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:28
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:32
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:36
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:42
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:46
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:50
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:58
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:68
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:72
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:77
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:79
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:82
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:83
+      :description: Line contains trailing whitespace
+    - :line: app/classes/db_storage.rb:87
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/db_stores_controller.rb:4
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/db_stores_controller.rb:9
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/db_stores_controller.rb:13
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/db_stores_controller.rb:17
+      :description: Line contains trailing whitespace
+    - :line: app/controllers/db_stores_controller.rb:19
+      :description: Line contains trailing whitespace
+    - :line: app/helpers/db_stores_helper.rb:5
+      :description: Line contains trailing whitespace
+    - :line: spec/classes/db_storage_spec.rb:3
+      :description: Line contains trailing whitespace
+    - :line: spec/classes/db_storage_spec.rb:20
+      :description: Line contains trailing whitespace
+    - :line: spec/classes/db_storage_spec.rb:45
+      :description: Line is >80 characters (81)
+    - :line: spec/classes/db_storage_spec.rb:76
+      :description: Line is >80 characters (82)
+    - :line: spec/spec_helper.rb:1
+      :description: Line is >80 characters (92)
+    - :line: spec/spec_helper.rb:3
+      :description: Line is >80 characters (84)
+    - :line: spec/spec_helper.rb:4
+      :description: Line is >80 characters (81)
+    - :line: spec/spec_helper.rb:77
+      :description: Line is >80 characters (85)
+    :comment:
+    - :line: app/classes/db_storage/catalog.rb:1
+      :class_name: DbStorage::Catalog
+    - :line: app/classes/db_storage.rb:1
+      :class_name: DbStorage
+    - :line: app/controllers/db_stores_controller.rb:1
+      :class_name: DbStoresController
+    - :line: app/helpers/db_stores_helper.rb:1
+      :class_name: DbStoresHelper
+:churn:
+  :changes: []
+  :class_churn: []
+  :method_churn: []
+  :changed_files: []
+  :changed_classes: []
+  :changed_methods: []
+:flay:
+  :total_score: '0'
+  :matches: []
+:flog:
+  :total: 142.7085762865093
+  :average: 3.964127119069703
+  :method_containers:
+  - :name: DbStorage::get_db_config
+    :path: app/classes/db_storage.rb
+    :total_score: 16.630093204789926
+    :highest_score: 16.630093204789926
+    :average_score: 16.630093204789926
+    :methods:
+      DbStorage::get_db_config:
+        :operators:
+          :assignment: 1.0
+          :configuration: 1.2
+          :database_configuration: 1.0
+          :env: 5.6
+          :[]: 8.8
+        :score: 16.630093204789926
+        :path: app/classes/db_storage.rb:59
+  - :name: DbStorage::sql_command
+    :path: app/classes/db_storage.rb
+    :total_score: 11.067520047418029
+    :highest_score: 11.067520047418029
+    :average_score: 11.067520047418029
+    :methods:
+      DbStorage::sql_command:
+        :operators:
+          :assignment: 2.0
+          :get_db_config: 1.0
+          :[]: 5.5
+          :branch: 2.0
+          :<<: 2.1
+          :system: 1.0
+          :raise: 1.1
+        :score: 11.067520047418029
+        :path: app/classes/db_storage.rb:51
+  - :name: DbStoresController
+    :path: app/controllers/db_stores_controller.rb
+    :total_score: 22.007440918375927
+    :highest_score: 9.1
+    :average_score: 4.401488183675186
+    :methods:
+      DbStoresController#none:
+        :operators:
+          :_process_action_callbacks: 1.4
+          :block_pass: 1.4
+          :to_proc_normal: 2.0999999999999996
+          :map: 1.2
+          :skip_filter: 1.0
+          :before_filter: 1.0
+          :private: 1.0
+        :score: 9.1
+        :path: 
+      DbStoresController#create:
+        :operators:
+          :assignment: 1.0
+          :params: 1.4
+          :[]: 1.2
+          :new: 1.0
+          :write: 1.0
+        :score: 4.707440918375927
+        :path: app/controllers/db_stores_controller.rb:5
+      DbStoresController#destroy:
+        :operators:
+          :params: 1.4
+          :[]: 1.2
+          :destroy: 1.0
+        :score: 3.5999999999999996
+        :path: app/controllers/db_stores_controller.rb:14
+      DbStoresController#restore:
+        :operators:
+          :params: 1.4
+          :[]: 1.2
+          :restore: 1.0
+        :score: 3.5999999999999996
+        :path: app/controllers/db_stores_controller.rb:10
+      DbStoresController#set_db_store_active:
+        :operators:
+          :assignment: 1.0
+        :score: 1.0
+        :path: app/controllers/db_stores_controller.rb:20
+  - :name: DbStorage::Catalog
+    :path: app/classes/db_storage/catalog.rb
+    :total_score: 48.30512463195836
+    :highest_score: 6.4845971347493885
+    :average_score: 3.7157788178429505
+    :methods:
+      DbStorage::Catalog#replace:
+        :operators:
+          :branch: 2.0
+          :assignment: 2.1
+          :find_index: 1.0
+          :[]: 1.3
+          :name: 1.3
+          :==: 1.1
+          :catalog_entry: 1.1
+        :score: 6.4845971347493885
+        :path: app/classes/db_storage/catalog.rb:52
+      DbStorage::Catalog#none:
+        :operators:
+          :attr_accessor: 1.0
+          :branch: 1.0
+          :env: 1.2
+          :test?: 1.0
+          :root: 2.2
+          :private: 1.0
+        :score: 6.47765389628066
+        :path: 
+      DbStorage::Catalog#remove:
+        :operators:
+          :assignment: 1.0
+          :branch: 2.1
+          :reject!: 1.0
+          :[]: 1.3
+          :include?: 1.1
+          :<<: 1.3000000000000003
+          :write: 1.0
+        :score: 6.156297588648554
+        :path: app/classes/db_storage/catalog.rb:30
+      DbStorage::Catalog#catalog_entry:
+        :operators:
+          :name: 1.0
+          :filename: 1.0
+          :migration: 1.0
+          :now: 1.2
+          :strftime: 1.0
+        :score: 5.2
+        :path: app/classes/db_storage/catalog.rb:62
+      DbStorage::Catalog#read:
+        :operators:
+          :branch: 1.0
+          :zero?: 1.0
+          :assignment: 2.1
+          :read: 1.2
+          :parse: 1.0
+        :score: 3.956008088970497
+        :path: app/classes/db_storage/catalog.rb:17
+      DbStorage::Catalog#write:
+        :operators:
+          :branch: 1.0
+          :open: 1.0
+          :generate: 1.3
+          :puts: 1.1
+        :score: 3.54400902933387
+        :path: app/classes/db_storage/catalog.rb:44
+      DbStorage::Catalog#find:
+        :operators:
+          :branch: 1.0
+          :find: 1.0
+          :[]: 1.3
+          :==: 1.1
+        :score: 3.54400902933387
+        :path: app/classes/db_storage/catalog.rb:22
+      DbStorage::Catalog#add_item:
+        :operators:
+          :branch: 1.0
+          :replace: 1.1
+          :insert: 1.1
+        :score: 2.4166091947189146
+        :path: app/classes/db_storage/catalog.rb:48
+      DbStorage::Catalog#names:
+        :operators:
+          :branch: 1.0
+          :collect: 1.0
+          :[]: 1.1
+        :score: 2.3259406699226015
+        :path: app/classes/db_storage/catalog.rb:26
+      DbStorage::Catalog#insert:
+        :operators:
+          :catalog_entry: 1.2
+          :insert: 1.0
+        :score: 2.2
+        :path: app/classes/db_storage/catalog.rb:58
+      DbStorage::Catalog#setup_filesystem:
+        :operators:
+          :mkdir_p: 1.0
+          :touch: 1.0
+        :score: 2.0
+        :path: app/classes/db_storage/catalog.rb:71
+      DbStorage::Catalog#add:
+        :operators:
+          :add_item: 1.0
+          :write: 1.0
+        :score: 2.0
+        :path: app/classes/db_storage/catalog.rb:12
+      DbStorage::Catalog#initialize:
+        :operators:
+          :setup_filesystem: 1.0
+          :read: 1.0
+        :score: 2.0
+        :path: app/classes/db_storage/catalog.rb:7
+  - :name: DbStorage
+    :path: app/classes/db_storage.rb
+    :total_score: 21.480986304202112
+    :highest_score: 6.47765389628066
+    :average_score: 4.296197260840422
+    :methods:
+      DbStorage#none:
+        :operators:
+          :attr_accessor: 1.0
+          :branch: 1.0
+          :env: 1.2
+          :test?: 1.0
+          :root: 2.2
+          :private: 1.0
+        :score: 6.47765389628066
+        :path: 
+      DbStorage#initialize:
+        :operators:
+          :assignment: 3.0
+          :[]: 1.0
+          :get_filename: 1.0
+          :current_version: 1.0
+          :class: 1.2
+          :setup_filesystem: 1.0
+        :score: 6.003332407921454
+        :path: app/classes/db_storage.rb:6
+      DbStorage#get_filename:
+        :operators:
+          :downcase: 1.4
+          :gsub: 1.2
+          :+: 1.0
+        :score: 3.5999999999999996
+        :path: app/classes/db_storage.rb:80
+      DbStorage#write:
+        :operators:
+          :write_sql: 1.0
+          :new: 1.2
+          :add: 1.0
+        :score: 3.2
+        :path: app/classes/db_storage.rb:13
+      DbStorage#write_sql:
+        :operators:
+          :class: 1.2
+          :sql_command: 1.0
+        :score: 2.2
+        :path: app/classes/db_storage.rb:84
+  - :name: DbStorage::destroy
+    :path: app/classes/db_storage.rb
+    :total_score: 4.805205510693584
+    :highest_score: 4.805205510693584
+    :average_score: 4.805205510693584
+    :methods:
+      DbStorage::destroy:
+        :operators:
+          :branch: 1.0
+          :catalog: 1.4
+          :remove: 1.2
+          :each: 1.0
+          :remove_file: 1.1
+        :score: 4.805205510693584
+        :path: app/classes/db_storage.rb:37
+  - :name: DbStorage::restore
+    :path: app/classes/db_storage.rb
+    :total_score: 4.512205669071391
+    :highest_score: 4.512205669071391
+    :average_score: 4.512205669071391
+    :methods:
+      DbStorage::restore:
+        :operators:
+          :assignment: 1.0
+          :catalog: 1.2
+          :[]: 1.2
+          :find: 1.0
+          :write_db: 1.0
+        :score: 4.512205669071391
+        :path: app/classes/db_storage.rb:18
+  - :name: DbStorage::remove_file
+    :path: app/classes/db_storage.rb
+    :total_score: 2.2
+    :highest_score: 2.2
+    :average_score: 2.2
+    :methods:
+      DbStorage::remove_file:
+        :operators:
+          :[]: 1.2
+          :rm: 1.0
+        :score: 2.2
+        :path: app/classes/db_storage.rb:43
+  - :name: DbStorage::write_db
+    :path: app/classes/db_storage.rb
+    :total_score: 2.2
+    :highest_score: 2.2
+    :average_score: 2.2
+    :methods:
+      DbStorage::write_db:
+        :operators:
+          :[]: 1.2
+          :sql_command: 1.0
+        :score: 2.2
+        :path: app/classes/db_storage.rb:47
+  - :name: DbStorage::stale?
+    :path: app/classes/db_storage.rb
+    :total_score: 2.2
+    :highest_score: 2.2
+    :average_score: 2.2
+    :methods:
+      DbStorage::stale?:
+        :operators:
+          :[]: 1.2
+          :!=: 1.0
+        :score: 2.2
+        :path: app/classes/db_storage.rb:69
+  - :name: DbStorage::names
+    :path: app/classes/db_storage.rb
+    :total_score: 2.2
+    :highest_score: 2.2
+    :average_score: 2.2
+    :methods:
+      DbStorage::names:
+        :operators:
+          :catalog: 1.2
+          :names: 1.0
+        :score: 2.2
+        :path: app/classes/db_storage.rb:33
+  - :name: main
+    :path: ''
+    :total_score: 1.1
+    :highest_score: 1.1
+    :average_score: 1.1
+    :methods:
+      main#none:
+        :operators:
+          :require: 1.1
+        :score: 1.1
+        :path: 
+  - :name: DbStoresHelper
+    :path: app/helpers/db_stores_helper.rb
+    :total_score: 2.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      DbStoresHelper#db_store_head:
+        :operators:
+          :render: 1.0
+        :score: 1.0
+        :path: app/helpers/db_stores_helper.rb:2
+      DbStoresHelper#db_store_body:
+        :operators:
+          :render: 1.0
+        :score: 1.0
+        :path: app/helpers/db_stores_helper.rb:6
+  - :name: DbStorage::setup_filesystem
+    :path: app/classes/db_storage.rb
+    :total_score: 1.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      DbStorage::setup_filesystem:
+        :operators:
+          :mkdir_p: 1.0
+        :score: 1.0
+        :path: app/classes/db_storage.rb:25
+  - :name: DbStorage::catalog
+    :path: app/classes/db_storage.rb
+    :total_score: 1.0
+    :highest_score: 1.0
+    :average_score: 1.0
+    :methods:
+      DbStorage::catalog:
+        :operators:
+          :new: 1.0
+        :score: 1.0
+        :path: app/classes/db_storage.rb:29
+:saikuro:
+  :files:
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yYWdl
+      :complexity: 21
+      :lines: 74
+      :methods:
+      - :name: !binary |-
+          RGJTdG9yYWdlI3JlbW92ZQ==
+        :complexity: 3
+        :lines: 10
+      - :name: !binary |-
+          RGJTdG9yYWdlI3JlcGxhY2U=
+        :complexity: 3
+        :lines: 4
+      - :name: !binary |-
+          RGJTdG9yYWdlI2ZpbmQ=
+        :complexity: 2
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3JlYWQ=
+        :complexity: 2
+        :lines: 3
+      - :name: !binary |-
+          RGJTdG9yYWdlI25hbWVz
+        :complexity: 2
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3dyaXRl
+        :complexity: 2
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NldHVwX2ZpbGVzeXN0ZW0=
+        :complexity: 1
+        :lines: 3
+      - :name: !binary |-
+          RGJTdG9yYWdlI2FkZF9pdGVt
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI2luc2VydA==
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI2NhdGFsb2dfZW50cnk=
+        :complexity: 1
+        :lines: 7
+      - :name: !binary |-
+          RGJTdG9yYWdlI2FkZA==
+        :complexity: 1
+        :lines: 3
+      - :name: !binary |-
+          RGJTdG9yYWdlI2luaXRpYWxpemU=
+        :complexity: 1
+        :lines: 3
+    :filename: app/classes/db_storage/catalog.rb
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yYWdl
+      :complexity: 19
+      :lines: 87
+      :methods:
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYuc3FsX2NvbW1hbmQ=
+        :complexity: 3
+        :lines: 6
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYuZGVzdHJveQ==
+        :complexity: 2
+        :lines: 4
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYucmVtb3ZlX2ZpbGU=
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYuc3RhbGU/
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYuZ2V0X2RiX2NvbmZpZw==
+        :complexity: 1
+        :lines: 8
+      - :name: !binary |-
+          RGJTdG9yYWdlI2dldF9maWxlbmFtZQ==
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYud3JpdGVfZGI=
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYubWlncmF0ZQ==
+        :complexity: 1
+        :lines: 3
+      - :name: !binary |-
+          RGJTdG9yYWdlI3dyaXRlX3NxbA==
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYubmFtZXM=
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYuY2F0YWxvZw==
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYuc2V0dXBfZmlsZXN5c3RlbQ==
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yYWdlI3NlbGYucmVzdG9yZQ==
+        :complexity: 1
+        :lines: 5
+      - :name: !binary |-
+          RGJTdG9yYWdlI3dyaXRl
+        :complexity: 1
+        :lines: 3
+      - :name: !binary |-
+          RGJTdG9yYWdlI2luaXRpYWxpemU=
+        :complexity: 1
+        :lines: 5
+    :filename: app/classes/db_storage.rb
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yZXNDb250cm9sbGVy
+      :complexity: 4
+      :lines: 22
+      :methods:
+      - :name: !binary |-
+          RGJTdG9yZXNDb250cm9sbGVyI3NldF9kYl9zdG9yZV9hY3RpdmU=
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yZXNDb250cm9sbGVyI2Rlc3Ryb3k=
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yZXNDb250cm9sbGVyI3Jlc3RvcmU=
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yZXNDb250cm9sbGVyI2NyZWF0ZQ==
+        :complexity: 1
+        :lines: 3
+    :filename: app/controllers/db_stores_controller.rb
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yZXNIZWxwZXI=
+      :complexity: 2
+      :lines: 8
+      :methods:
+      - :name: !binary |-
+          RGJTdG9yZXNIZWxwZXIjZGJfc3RvcmVfYm9keQ==
+        :complexity: 1
+        :lines: 2
+      - :name: !binary |-
+          RGJTdG9yZXNIZWxwZXIjZGJfc3RvcmVfaGVhZA==
+        :complexity: 1
+        :lines: 2
+    :filename: app/helpers/db_stores_helper.rb
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yZQ==
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    - :class_name: !binary |-
+        RGJTdG9yZTo6RW5naW5l
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: lib/db_store/engine.rb
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yZQ==
+      :complexity: 0
+      :lines: 2
+      :methods: []
+    :filename: lib/db_store/version.rb
+  - :classes:
+    - :class_name: !binary |-
+        RGJTdG9yZQ==
+      :complexity: 0
+      :lines: 1
+      :methods: []
+    :filename: lib/db_store.rb
+  :classes:
+  - :name: !binary |-
+      RGJTdG9yYWdl
+    :complexity: 21
+    :lines: 74
+    :defs:
+    - :name: !binary |-
+        RGJTdG9yYWdlI2luaXRpYWxpemU=
+      :complexity: 1
+      :lines: 3
+    - :name: !binary |-
+        RGJTdG9yYWdlI2FkZA==
+      :complexity: 1
+      :lines: 3
+    - :name: !binary |-
+        RGJTdG9yYWdlI3JlYWQ=
+      :complexity: 2
+      :lines: 3
+    - :name: !binary |-
+        RGJTdG9yYWdlI2ZpbmQ=
+      :complexity: 2
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI25hbWVz
+      :complexity: 2
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3JlbW92ZQ==
+      :complexity: 3
+      :lines: 10
+    - :name: !binary |-
+        RGJTdG9yYWdlI3dyaXRl
+      :complexity: 2
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI2FkZF9pdGVt
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3JlcGxhY2U=
+      :complexity: 3
+      :lines: 4
+    - :name: !binary |-
+        RGJTdG9yYWdlI2luc2VydA==
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI2NhdGFsb2dfZW50cnk=
+      :complexity: 1
+      :lines: 7
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NldHVwX2ZpbGVzeXN0ZW0=
+      :complexity: 1
+      :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdl
+    :complexity: 19
+    :lines: 87
+    :defs:
+    - :name: !binary |-
+        RGJTdG9yYWdlI2luaXRpYWxpemU=
+      :complexity: 1
+      :lines: 5
+    - :name: !binary |-
+        RGJTdG9yYWdlI3dyaXRl
+      :complexity: 1
+      :lines: 3
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYucmVzdG9yZQ==
+      :complexity: 1
+      :lines: 5
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuc2V0dXBfZmlsZXN5c3RlbQ==
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuY2F0YWxvZw==
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYubmFtZXM=
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuZGVzdHJveQ==
+      :complexity: 2
+      :lines: 4
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYucmVtb3ZlX2ZpbGU=
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYud3JpdGVfZGI=
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuc3FsX2NvbW1hbmQ=
+      :complexity: 3
+      :lines: 6
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuZ2V0X2RiX2NvbmZpZw==
+      :complexity: 1
+      :lines: 8
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuc3RhbGU/
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3NlbGYubWlncmF0ZQ==
+      :complexity: 1
+      :lines: 3
+    - :name: !binary |-
+        RGJTdG9yYWdlI2dldF9maWxlbmFtZQ==
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yYWdlI3dyaXRlX3NxbA==
+      :complexity: 1
+      :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNDb250cm9sbGVy
+    :complexity: 4
+    :lines: 22
+    :defs:
+    - :name: !binary |-
+        RGJTdG9yZXNDb250cm9sbGVyI2NyZWF0ZQ==
+      :complexity: 1
+      :lines: 3
+    - :name: !binary |-
+        RGJTdG9yZXNDb250cm9sbGVyI3Jlc3RvcmU=
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yZXNDb250cm9sbGVyI2Rlc3Ryb3k=
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yZXNDb250cm9sbGVyI3NldF9kYl9zdG9yZV9hY3RpdmU=
+      :complexity: 1
+      :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNIZWxwZXI=
+    :complexity: 2
+    :lines: 8
+    :defs:
+    - :name: !binary |-
+        RGJTdG9yZXNIZWxwZXIjZGJfc3RvcmVfaGVhZA==
+      :complexity: 1
+      :lines: 2
+    - :name: !binary |-
+        RGJTdG9yZXNIZWxwZXIjZGJfc3RvcmVfYm9keQ==
+      :complexity: 1
+      :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZQ==
+    :complexity: 0
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZTo6RW5naW5l
+    :complexity: 0
+    :lines: 1
+  - :name: !binary |-
+      RGJTdG9yZQ==
+    :complexity: 0
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZQ==
+    :complexity: 0
+    :lines: 1
+  :methods:
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYuc3FsX2NvbW1hbmQ=
+    :complexity: 3
+    :lines: 6
+  - :name: !binary |-
+      RGJTdG9yYWdlI3JlcGxhY2U=
+    :complexity: 3
+    :lines: 4
+  - :name: !binary |-
+      RGJTdG9yYWdlI3JlbW92ZQ==
+    :complexity: 3
+    :lines: 10
+  - :name: !binary |-
+      RGJTdG9yYWdlI25hbWVz
+    :complexity: 2
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3dyaXRl
+    :complexity: 2
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI2ZpbmQ=
+    :complexity: 2
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYuZGVzdHJveQ==
+    :complexity: 2
+    :lines: 4
+  - :name: !binary |-
+      RGJTdG9yYWdlI3JlYWQ=
+    :complexity: 2
+    :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYuY2F0YWxvZw==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYuc3RhbGU/
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYuZ2V0X2RiX2NvbmZpZw==
+    :complexity: 1
+    :lines: 8
+  - :name: !binary |-
+      RGJTdG9yYWdlI2dldF9maWxlbmFtZQ==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYud3JpdGVfZGI=
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYucmVtb3ZlX2ZpbGU=
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3dyaXRlX3NxbA==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYubmFtZXM=
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYubWlncmF0ZQ==
+    :complexity: 1
+    :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYuc2V0dXBfZmlsZXN5c3RlbQ==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NlbGYucmVzdG9yZQ==
+    :complexity: 1
+    :lines: 5
+  - :name: !binary |-
+      RGJTdG9yYWdlI3dyaXRl
+    :complexity: 1
+    :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdlI2luaXRpYWxpemU=
+    :complexity: 1
+    :lines: 5
+  - :name: !binary |-
+      RGJTdG9yYWdlI3NldHVwX2ZpbGVzeXN0ZW0=
+    :complexity: 1
+    :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdlI2NhdGFsb2dfZW50cnk=
+    :complexity: 1
+    :lines: 7
+  - :name: !binary |-
+      RGJTdG9yYWdlI2luc2VydA==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNDb250cm9sbGVyI2NyZWF0ZQ==
+    :complexity: 1
+    :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdlI2FkZF9pdGVt
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNDb250cm9sbGVyI3Jlc3RvcmU=
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNDb250cm9sbGVyI2Rlc3Ryb3k=
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNDb250cm9sbGVyI3NldF9kYl9zdG9yZV9hY3RpdmU=
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNIZWxwZXIjZGJfc3RvcmVfaGVhZA==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yZXNIZWxwZXIjZGJfc3RvcmVfYm9keQ==
+    :complexity: 1
+    :lines: 2
+  - :name: !binary |-
+      RGJTdG9yYWdlI2FkZA==
+    :complexity: 1
+    :lines: 3
+  - :name: !binary |-
+      RGJTdG9yYWdlI2luaXRpYWxpemU=
+    :complexity: 1
+    :lines: 3
+:reek:
+  :matches:
+  - :file_path: app/classes/db_storage.rb
+    :code_smells:
+    - :method: DbStorage
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+    - :method: DbStorage#self.get_db_config
+      :message: calls Rails.env 4 times
+      :type: DuplicateMethodCall
+    - :method: DbStorage#self.get_db_config
+      :message: calls config[Rails.env] 4 times
+      :type: DuplicateMethodCall
+    - :method: DbStorage#self.migrate
+      :message: has unused parameter 'store'
+      :type: UnusedParameters
+    - :method: DbStorage#self.sql_command
+      :message: calls config[:host] twice
+      :type: DuplicateMethodCall
+  - :file_path: app/classes/db_storage/catalog.rb
+    :code_smells:
+    - :method: DbStorage::Catalog
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+    - :method: DbStorage::Catalog#catalog_entry
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: DbStorage::Catalog#catalog_entry
+      :message: refers to db_store more than self
+      :type: FeatureEnvy
+    - :method: DbStorage::Catalog#remove
+      :message: has approx 6 statements
+      :type: TooManyStatements
+    - :method: DbStorage::Catalog#remove
+      :message: is controlled by argument names
+      :type: ControlParameter
+    - :method: DbStorage::Catalog#replace
+      :message: has the variable name 'i'
+      :type: UncommunicativeVariableName
+    - :method: DbStorage::Catalog#setup_filesystem
+      :message: doesn't depend on instance state
+      :type: UtilityFunction
+    - :method: DbStorage::Catalog#write
+      :message: has the variable name 'f'
+      :type: UncommunicativeVariableName
+  - :file_path: app/controllers/db_stores_controller.rb
+    :code_smells:
+    - :method: DbStoresController
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+  - :file_path: lib/db_store/engine.rb
+    :code_smells:
+    - :method: DbStore::Engine
+      :message: has no descriptive comment
+      :type: IrresponsibleModule
+:roodi:
+  :total:
+  - Found 0 errors.
+  :problems: []
+:stats:
+  :codeLOC: 125
+  :testLOC: 78
+  :code_to_test_ratio: 0.6
+  :lines:
+  - :name: Controllers
+    :lines: 23
+    :loc: 18
+    :classes: 1
+    :methods: 4
+    :methods_per_class: 4
+    :loc_per_method: 2
+  - :name: Helpers
+    :lines: 9
+    :loc: 8
+    :classes: 0
+    :methods: 2
+    :methods_per_class: 0
+    :loc_per_method: 2
+  - :name: Javascripts
+    :lines: 86
+    :loc: 85
+    :classes: 0
+    :methods: 16
+    :methods_per_class: 0
+    :loc_per_method: 3
+  - :name: Libraries
+    :lines: 11
+    :loc: 10
+    :classes: 1
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Integration tests
+    :lines: 10
+    :loc: 4
+    :classes: 1
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Classes specs
+    :lines: 87
+    :loc: 78
+    :classes: 0
+    :methods: 0
+    :methods_per_class: 0
+    :loc_per_method: 0
+  - :name: Total
+    :lines: 226
+    :loc: 203
+    :classes: 3
+    :methods: 22
+    :methods_per_class: 7
+    :loc_per_method: 7
+:hotspots:
+  files:
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", nil, nil]'
+    details:
+      flog: complexity is 16.6
+      saikuro: average complexity is 1.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:51
+      file_name: app/classes/db_storage.rb
+      line_number: '51'
+      hash_key: ! '["app/classes/db_storage.rb:51", nil, nil]'
+    details:
+      flog: complexity is 11.1
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", nil, nil]'
+    details:
+      flog: complexity is 6.5
+      saikuro: average complexity is 1.7
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:6
+      file_name: app/classes/db_storage.rb
+      line_number: '6'
+      hash_key: ! '["app/classes/db_storage.rb:6", nil, nil]'
+    details:
+      flog: complexity is 6.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:30
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '30'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:30", nil, nil]'
+    details:
+      flog: complexity is 6.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/db_stores_controller.rb:5
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '5'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:5", nil, nil]'
+    details:
+      flog: complexity is 4.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:62
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '62'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:62", nil, nil]'
+    details:
+      flog: complexity is 5.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:37
+      file_name: app/classes/db_storage.rb
+      line_number: '37'
+      hash_key: ! '["app/classes/db_storage.rb:37", nil, nil]'
+    details:
+      flog: complexity is 4.8
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/db_stores_controller.rb:10
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '10'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:10", nil, nil]'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/db_stores_controller.rb:14
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '14'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:14", nil, nil]'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:80
+      file_name: app/classes/db_storage.rb
+      line_number: '80'
+      hash_key: ! '["app/classes/db_storage.rb:80", nil, nil]'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:18
+      file_name: app/classes/db_storage.rb
+      line_number: '18'
+      hash_key: ! '["app/classes/db_storage.rb:18", nil, nil]'
+    details:
+      flog: complexity is 4.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:13
+      file_name: app/classes/db_storage.rb
+      line_number: '13'
+      hash_key: ! '["app/classes/db_storage.rb:13", nil, nil]'
+    details:
+      flog: complexity is 3.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:17
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '17'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:17", nil, nil]'
+    details:
+      flog: complexity is 4.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:44
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '44'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:44", nil, nil]'
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:22
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '22'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:22", nil, nil]'
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:84
+      file_name: app/classes/db_storage.rb
+      line_number: '84'
+      hash_key: ! '["app/classes/db_storage.rb:84", nil, nil]'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:48
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '48'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:48", nil, nil]'
+    details:
+      flog: complexity is 2.4
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:26
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '26'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:26", nil, nil]'
+    details:
+      flog: complexity is 2.3
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:33
+      file_name: app/classes/db_storage.rb
+      line_number: '33'
+      hash_key: ! '["app/classes/db_storage.rb:33", nil, nil]'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:69
+      file_name: app/classes/db_storage.rb
+      line_number: '69'
+      hash_key: ! '["app/classes/db_storage.rb:69", nil, nil]'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:58
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '58'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:58", nil, nil]'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:47
+      file_name: app/classes/db_storage.rb
+      line_number: '47'
+      hash_key: ! '["app/classes/db_storage.rb:47", nil, nil]'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:43
+      file_name: app/classes/db_storage.rb
+      line_number: '43'
+      hash_key: ! '["app/classes/db_storage.rb:43", nil, nil]'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/db_stores_controller.rb:20
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '20'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:20", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:7
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '7'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:7", nil, nil]'
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:12
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '12'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:12", nil, nil]'
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/db_stores_helper.rb:6
+      file_name: app/helpers/db_stores_helper.rb
+      line_number: '6'
+      hash_key: ! '["app/helpers/db_stores_helper.rb:6", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/helpers/db_stores_helper.rb:2
+      file_name: app/helpers/db_stores_helper.rb
+      line_number: '2'
+      hash_key: ! '["app/helpers/db_stores_helper.rb:2", nil, nil]'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:71
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '71'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:71", nil, nil]'
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:29
+      file_name: app/classes/db_storage.rb
+      line_number: '29'
+      hash_key: ! '["app/classes/db_storage.rb:29", nil, nil]'
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb:25
+      file_name: app/classes/db_storage.rb
+      line_number: '25'
+      hash_key: ! '["app/classes/db_storage.rb:25", nil, nil]'
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: 
+      hash_key: ! '["app/classes/db_storage/catalog.rb", nil, nil]'
+    details:
+      reek: found 8 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/classes/db_storage.rb
+      file_name: app/classes/db_storage.rb
+      line_number: 
+      hash_key: ! '["app/classes/db_storage.rb", nil, nil]'
+    details:
+      reek: found 5 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: app/controllers/db_stores_controller.rb
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: 
+      hash_key: ! '["app/controllers/db_stores_controller.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  - location:
+      class_name: 
+      method_name: 
+      file_path: lib/db_store/engine.rb
+      file_name: lib/db_store/engine.rb
+      line_number: 
+      hash_key: ! '["lib/db_store/engine.rb", nil, nil]'
+    details:
+      reek: found 1 code smells
+  classes:
+  - location:
+      class_name: DbStorage
+      method_name: 
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", nil]'
+    details:
+      flog: average complexity is 4.6
+      saikuro: average complexity is 1.4
+      reek: found 1 code smells
+  - location:
+      class_name: !binary |-
+        RGJTdG9yZXNDb250cm9sbGVy
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: ! '[nil, "DbStoresController", nil]'
+    details:
+      flog: average complexity is 4.4
+      saikuro: average complexity is 1.0
+      reek: found 1 code smells
+  - location:
+      class_name: Catalog
+      method_name: 
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "Catalog", nil]'
+    details:
+      flog: average complexity is 3.7
+      reek: found 8 code smells
+  - location:
+      class_name: DbStoresHelper
+      method_name: 
+      file_path: app/helpers/db_stores_helper.rb:2
+      file_name: app/helpers/db_stores_helper.rb
+      line_number: '2'
+      hash_key: ! '["app/helpers/db_stores_helper.rb:2", "DbStoresHelper", nil]'
+    details:
+      flog: average complexity is 1.0
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: main
+      method_name: 
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: ! '[nil, "main", nil]'
+    details:
+      flog: complexity is 1.1
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdlI3NlbGY=
+      method_name: 
+      file_path: app/classes/db_storage.rb
+      file_name: app/classes/db_storage.rb
+      line_number: 
+      hash_key: ! '["app/classes/db_storage.rb", "DbStorage#self", nil]'
+    details:
+      reek: found 4 code smells
+  - location:
+      class_name: !binary |-
+        RW5naW5l
+      method_name: 
+      file_path: lib/db_store/engine.rb
+      file_name: lib/db_store/engine.rb
+      line_number: 
+      hash_key: ! '["lib/db_store/engine.rb", "Engine", nil]'
+    details:
+      reek: found 1 code smells
+  methods:
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#get_db_config
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#get_db_config"]'
+      simple_method_name: ! '#get_db_config'
+    details:
+      flog: complexity is 16.6
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#sql_command
+      file_path: app/classes/db_storage.rb:51
+      file_name: app/classes/db_storage.rb
+      line_number: '51'
+      hash_key: ! '["app/classes/db_storage.rb:51", "DbStorage", "DbStorage#sql_command"]'
+      simple_method_name: ! '#sql_command'
+    details:
+      flog: complexity is 11.1
+  - location:
+      class_name: DbStoresController
+      method_name: DbStoresController#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: ! '[nil, "DbStoresController", "DbStoresController#none"]'
+      simple_method_name: ! '#none'
+    details:
+      flog: complexity is 9.1
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#initialize
+      file_path: app/classes/db_storage.rb:6
+      file_name: app/classes/db_storage.rb
+      line_number: '6'
+      hash_key: ! '["app/classes/db_storage.rb:6", "DbStorage", "DbStorage#initialize"]'
+      simple_method_name: ! '#initialize'
+    details:
+      flog: complexity is 6.0
+      saikuro: average complexity is 1.0
+  - location:
+      class_name: Catalog
+      method_name: Catalog#remove
+      file_path: app/classes/db_storage/catalog.rb:30
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '30'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:30", "Catalog", "Catalog#remove"]'
+      simple_method_name: ! '#remove'
+    details:
+      flog: complexity is 6.2
+      reek: found 2 code smells
+  - location:
+      class_name: Catalog
+      method_name: Catalog#replace
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "Catalog", "Catalog#replace"]'
+      simple_method_name: ! '#replace'
+    details:
+      flog: complexity is 6.5
+      reek: found 1 code smells
+  - location:
+      class_name: Catalog
+      method_name: Catalog#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: ! '[nil, "Catalog", "Catalog#none"]'
+      simple_method_name: ! '#none'
+    details:
+      flog: complexity is 6.5
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: ! '[nil, "DbStorage", "DbStorage#none"]'
+      simple_method_name: ! '#none'
+    details:
+      flog: complexity is 6.5
+  - location:
+      class_name: Catalog
+      method_name: Catalog#catalog_entry
+      file_path: app/classes/db_storage/catalog.rb:62
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '62'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:62", "Catalog", "Catalog#catalog_entry"]'
+      simple_method_name: ! '#catalog_entry'
+    details:
+      flog: complexity is 5.2
+      reek: found 2 code smells
+  - location:
+      class_name: DbStoresController
+      method_name: DbStoresController#create
+      file_path: app/controllers/db_stores_controller.rb:5
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '5'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:5", "DbStoresController",
+        "DbStoresController#create"]'
+      simple_method_name: ! '#create'
+    details:
+      flog: complexity is 4.7
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#destroy
+      file_path: app/classes/db_storage.rb:37
+      file_name: app/classes/db_storage.rb
+      line_number: '37'
+      hash_key: ! '["app/classes/db_storage.rb:37", "DbStorage", "DbStorage#destroy"]'
+      simple_method_name: ! '#destroy'
+    details:
+      flog: complexity is 4.8
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#write
+      file_path: app/classes/db_storage.rb:13
+      file_name: app/classes/db_storage.rb
+      line_number: '13'
+      hash_key: ! '["app/classes/db_storage.rb:13", "DbStorage", "DbStorage#write"]'
+      simple_method_name: ! '#write'
+    details:
+      flog: complexity is 3.2
+      saikuro: average complexity is 1.5
+  - location:
+      class_name: DbStoresController
+      method_name: DbStoresController#destroy
+      file_path: app/controllers/db_stores_controller.rb:14
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '14'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:14", "DbStoresController",
+        "DbStoresController#destroy"]'
+      simple_method_name: ! '#destroy'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStoresController
+      method_name: DbStoresController#restore
+      file_path: app/controllers/db_stores_controller.rb:10
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '10'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:10", "DbStoresController",
+        "DbStoresController#restore"]'
+      simple_method_name: ! '#restore'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#get_filename
+      file_path: app/classes/db_storage.rb:80
+      file_name: app/classes/db_storage.rb
+      line_number: '80'
+      hash_key: ! '["app/classes/db_storage.rb:80", "DbStorage", "DbStorage#get_filename"]'
+      simple_method_name: ! '#get_filename'
+    details:
+      flog: complexity is 3.6
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#restore
+      file_path: app/classes/db_storage.rb:18
+      file_name: app/classes/db_storage.rb
+      line_number: '18'
+      hash_key: ! '["app/classes/db_storage.rb:18", "DbStorage", "DbStorage#restore"]'
+      simple_method_name: ! '#restore'
+    details:
+      flog: complexity is 4.5
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#names
+      file_path: app/classes/db_storage.rb:33
+      file_name: app/classes/db_storage.rb
+      line_number: '33'
+      hash_key: ! '["app/classes/db_storage.rb:33", "DbStorage", "DbStorage#names"]'
+      simple_method_name: ! '#names'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 2.0
+  - location:
+      class_name: Catalog
+      method_name: Catalog#read
+      file_path: app/classes/db_storage/catalog.rb:17
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '17'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:17", "Catalog", "Catalog#read"]'
+      simple_method_name: ! '#read'
+    details:
+      flog: complexity is 4.0
+  - location:
+      class_name: Catalog
+      method_name: Catalog#find
+      file_path: app/classes/db_storage/catalog.rb:22
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '22'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:22", "Catalog", "Catalog#find"]'
+      simple_method_name: ! '#find'
+    details:
+      flog: complexity is 3.5
+  - location:
+      class_name: Catalog
+      method_name: Catalog#write
+      file_path: app/classes/db_storage/catalog.rb:44
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '44'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:44", "Catalog", "Catalog#write"]'
+      simple_method_name: ! '#write'
+    details:
+      flog: complexity is 3.5
+      reek: found 1 code smells
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuc3FsX2NvbW1hbmQ=
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.sql_command"]'
+      simple_method_name: !binary |-
+        I3NlbGYuc3FsX2NvbW1hbmQ=
+    details:
+      saikuro: complexity is 3.0
+      reek: found 1 code smells
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#write_sql
+      file_path: app/classes/db_storage.rb:84
+      file_name: app/classes/db_storage.rb
+      line_number: '84'
+      hash_key: ! '["app/classes/db_storage.rb:84", "DbStorage", "DbStorage#write_sql"]'
+      simple_method_name: ! '#write_sql'
+    details:
+      flog: complexity is 2.2
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3JlcGxhY2U=
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#replace"]'
+      simple_method_name: !binary |-
+        I3JlcGxhY2U=
+    details:
+      saikuro: complexity is 3.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3JlbW92ZQ==
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#remove"]'
+      simple_method_name: !binary |-
+        I3JlbW92ZQ==
+    details:
+      saikuro: complexity is 3.0
+  - location:
+      class_name: Catalog
+      method_name: Catalog#add_item
+      file_path: app/classes/db_storage/catalog.rb:48
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '48'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:48", "Catalog", "Catalog#add_item"]'
+      simple_method_name: ! '#add_item'
+    details:
+      flog: complexity is 2.4
+  - location:
+      class_name: Catalog
+      method_name: Catalog#names
+      file_path: app/classes/db_storage/catalog.rb:26
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '26'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:26", "Catalog", "Catalog#names"]'
+      simple_method_name: ! '#names'
+    details:
+      flog: complexity is 2.3
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#stale?
+      file_path: app/classes/db_storage.rb:69
+      file_name: app/classes/db_storage.rb
+      line_number: '69'
+      hash_key: ! '["app/classes/db_storage.rb:69", "DbStorage", "DbStorage#stale?"]'
+      simple_method_name: ! '#stale?'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: Catalog
+      method_name: Catalog#insert
+      file_path: app/classes/db_storage/catalog.rb:58
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '58'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:58", "Catalog", "Catalog#insert"]'
+      simple_method_name: ! '#insert'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#write_db
+      file_path: app/classes/db_storage.rb:47
+      file_name: app/classes/db_storage.rb
+      line_number: '47'
+      hash_key: ! '["app/classes/db_storage.rb:47", "DbStorage", "DbStorage#write_db"]'
+      simple_method_name: ! '#write_db'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#remove_file
+      file_path: app/classes/db_storage.rb:43
+      file_name: app/classes/db_storage.rb
+      line_number: '43'
+      hash_key: ! '["app/classes/db_storage.rb:43", "DbStorage", "DbStorage#remove_file"]'
+      simple_method_name: ! '#remove_file'
+    details:
+      flog: complexity is 2.2
+  - location:
+      class_name: Catalog
+      method_name: Catalog#setup_filesystem
+      file_path: app/classes/db_storage/catalog.rb:71
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '71'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:71", "Catalog", "Catalog#setup_filesystem"]'
+      simple_method_name: ! '#setup_filesystem'
+    details:
+      flog: complexity is 2.0
+      reek: found 1 code smells
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#setup_filesystem
+      file_path: app/classes/db_storage.rb:25
+      file_name: app/classes/db_storage.rb
+      line_number: '25'
+      hash_key: ! '["app/classes/db_storage.rb:25", "DbStorage", "DbStorage#setup_filesystem"]'
+      simple_method_name: ! '#setup_filesystem'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStoresHelper
+      method_name: DbStoresHelper#db_store_head
+      file_path: app/helpers/db_stores_helper.rb:2
+      file_name: app/helpers/db_stores_helper.rb
+      line_number: '2'
+      hash_key: ! '["app/helpers/db_stores_helper.rb:2", "DbStoresHelper", "DbStoresHelper#db_store_head"]'
+      simple_method_name: ! '#db_store_head'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStoresHelper
+      method_name: DbStoresHelper#db_store_body
+      file_path: app/helpers/db_stores_helper.rb:6
+      file_name: app/helpers/db_stores_helper.rb
+      line_number: '6'
+      hash_key: ! '["app/helpers/db_stores_helper.rb:6", "DbStoresHelper", "DbStoresHelper#db_store_body"]'
+      simple_method_name: ! '#db_store_body'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStoresController
+      method_name: DbStoresController#set_db_store_active
+      file_path: app/controllers/db_stores_controller.rb:20
+      file_name: app/controllers/db_stores_controller.rb
+      line_number: '20'
+      hash_key: ! '["app/controllers/db_stores_controller.rb:20", "DbStoresController",
+        "DbStoresController#set_db_store_active"]'
+      simple_method_name: ! '#set_db_store_active'
+    details:
+      flog: complexity is 1.0
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuZGVzdHJveQ==
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.destroy"]'
+      simple_method_name: !binary |-
+        I3NlbGYuZGVzdHJveQ==
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3JlYWQ=
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#read"]'
+      simple_method_name: !binary |-
+        I3JlYWQ=
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: Catalog
+      method_name: Catalog#initialize
+      file_path: app/classes/db_storage/catalog.rb:7
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '7'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:7", "Catalog", "Catalog#initialize"]'
+      simple_method_name: ! '#initialize'
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI2ZpbmQ=
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#find"]'
+      simple_method_name: !binary |-
+        I2ZpbmQ=
+    details:
+      saikuro: complexity is 2.0
+  - location:
+      class_name: Catalog
+      method_name: Catalog#add
+      file_path: app/classes/db_storage/catalog.rb:12
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '12'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:12", "Catalog", "Catalog#add"]'
+      simple_method_name: ! '#add'
+    details:
+      flog: complexity is 2.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuZ2V0X2RiX2NvbmZpZw==
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.get_db_config"]'
+      simple_method_name: !binary |-
+        I3NlbGYuZ2V0X2RiX2NvbmZpZw==
+    details:
+      saikuro: complexity is 1.0
+      reek: found 2 code smells
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYubWlncmF0ZQ==
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.migrate"]'
+      simple_method_name: !binary |-
+        I3NlbGYubWlncmF0ZQ==
+    details:
+      saikuro: complexity is 1.0
+      reek: found 1 code smells
+  - location:
+      class_name: main
+      method_name: main#none
+      file_path: 
+      file_name: 
+      line_number: 
+      hash_key: ! '[nil, "main", "main#none"]'
+      simple_method_name: ! '#none'
+    details:
+      flog: complexity is 1.1
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI2NhdGFsb2dfZW50cnk=
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#catalog_entry"]'
+      simple_method_name: !binary |-
+        I2NhdGFsb2dfZW50cnk=
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI2FkZA==
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#add"]'
+      simple_method_name: !binary |-
+        I2FkZA==
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI2luc2VydA==
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#insert"]'
+      simple_method_name: !binary |-
+        I2luc2VydA==
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYucmVtb3ZlX2ZpbGU=
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.remove_file"]'
+      simple_method_name: !binary |-
+        I3NlbGYucmVtb3ZlX2ZpbGU=
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuc3RhbGU/
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.stale?"]'
+      simple_method_name: !binary |-
+        I3NlbGYuc3RhbGU/
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI2FkZF9pdGVt
+      file_path: app/classes/db_storage/catalog.rb:52
+      file_name: app/classes/db_storage/catalog.rb
+      line_number: '52'
+      hash_key: ! '["app/classes/db_storage/catalog.rb:52", "DbStorage", "DbStorage#add_item"]'
+      simple_method_name: !binary |-
+        I2FkZF9pdGVt
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYud3JpdGVfZGI=
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.write_db"]'
+      simple_method_name: !binary |-
+        I3NlbGYud3JpdGVfZGI=
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: DbStorage
+      method_name: DbStorage#catalog
+      file_path: app/classes/db_storage.rb:29
+      file_name: app/classes/db_storage.rb
+      line_number: '29'
+      hash_key: ! '["app/classes/db_storage.rb:29", "DbStorage", "DbStorage#catalog"]'
+      simple_method_name: ! '#catalog'
+    details:
+      flog: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYubmFtZXM=
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.names"]'
+      simple_method_name: !binary |-
+        I3NlbGYubmFtZXM=
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuY2F0YWxvZw==
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.catalog"]'
+      simple_method_name: !binary |-
+        I3NlbGYuY2F0YWxvZw==
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYuc2V0dXBfZmlsZXN5c3RlbQ==
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.setup_filesystem"]'
+      simple_method_name: !binary |-
+        I3NlbGYuc2V0dXBfZmlsZXN5c3RlbQ==
+    details:
+      saikuro: complexity is 1.0
+  - location:
+      class_name: !binary |-
+        RGJTdG9yYWdl
+      method_name: !binary |-
+        RGJTdG9yYWdlI3NlbGYucmVzdG9yZQ==
+      file_path: app/classes/db_storage.rb:59
+      file_name: app/classes/db_storage.rb
+      line_number: '59'
+      hash_key: ! '["app/classes/db_storage.rb:59", "DbStorage", "DbStorage#self.restore"]'
+      simple_method_name: !binary |-
+        I3NlbGYucmVzdG9yZQ==
+    details:
+      saikuro: complexity is 1.0

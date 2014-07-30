@@ -19,4 +19,5 @@ group :development, :test do
 	gem "rspec-mocks"
 	gem "timecop"
 	gem "metric_fu"
+	gem 'simplecov'
 end

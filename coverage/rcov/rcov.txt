@@ -1,0 +1,625 @@
+metric_fu shift the first line
+================================================================================
+ ./app/classes/db_storage.rb
+================================================================================
+   class DbStorage
+     attr_accessor :name, :filename, :migration
+--   
+     STORAGE_DIR = Rails.env.test? ? "#{Rails.root}/db_store_test" : "#{Rails.root}/db_store"
+--   
+     def initialize(params)
+       @name = params[:name]
+       @filename = get_filename
+       @migration = ActiveRecord::Migrator.current_version
+       self.class.setup_filesystem
+--   end
+-- 
+     def write
+       write_sql
+       Catalog.new.add(self)
+--   end
+--   
+     def self.restore(params)
+       store = catalog.find(params[:name])
+--     # migration = ActiveRecord::Migrator.current_version
+       write_db(store)
+--     # migrate(store) if stale?(store, migration)
+--   end
+--     
+     def self.setup_filesystem
+       FileUtils.mkdir_p STORAGE_DIR
+--   end
+--   
+     def self.catalog
+       Catalog.new
+--   end
+--   
+     def self.names
+       catalog.names
+--   end
+--   
+     def self.destroy(names)
+       catalog.remove(names).each do |store|
+         remove_file(store)
+--     end
+--   end
+--   
+     def self.remove_file(store)
+       FileUtils.rm("#{STORAGE_DIR}/#{store["filename"]}")
+--   end
+--   
+     def self.write_db(store)
+       sql_command("mysql", "< #{STORAGE_DIR}/#{store["filename"]}")
+--   end
+--   
+     def self.sql_command(cmd, arg)
+       config = get_db_config
+       command_str = "#{cmd} -u #{config[:username]} -p#{config[:password]}"
+       command_str << " -h #{config[:host]}" if config[:host]
+       command_str << " #{config[:database]} #{arg}"
+       raise "#{cmd} failed" unless system(command_str)
+--   end
+--   
+     def self.get_db_config
+       config = Rails.configuration.database_configuration
+--     {
+--       host:     config[Rails.env]["host"],
+--       database: config[Rails.env]["database"],
+--       username: config[Rails.env]["username"],
+--       password: config[Rails.env]["password"],
+       }
+--   end
+--   
+     def self.stale?(store, migration)
+!!     store["migration"] != migration
+--   end
+--   
+     def self.migrate(store)
+--     # result = system("RAILS_ENV=#{Rails.env} rake db:migrate")
+--     # sql_command("mysqldump", "> #{STORAGE_DIR}/#{store["filename"]}")
+--   end
+--   
+     private
+--   
+     def get_filename
+       @name.downcase.gsub(/[^0-9a-z]/, '') + ".sql"
+--   end  
+--   
+     def write_sql
+      self.class.sql_command("mysqldump", "> #{STORAGE_DIR}/#{@filename}")
+--   end
+--       
+-- end
+
+================================================================================
+ ./app/classes/db_storage/catalog.rb
+================================================================================
+   class DbStorage::Catalog
+     attr_accessor :list
+--   
+     STORAGE_DIR = Rails.env.test? ? "#{Rails.root}/db_store_test" : "#{Rails.root}/db_store"
+     FILENAME = "#{STORAGE_DIR}/catalog.txt"
+--   
+     def initialize
+       setup_filesystem
+       read
+--   end
+--   
+     def add(db_store)
+       add_item(db_store)
+       write
+--   end
+--   
+     def read
+       return @list = [] if File.zero?(FILENAME)
+       @list = JSON.parse(File.read(FILENAME))
+--   end
+--   
+     def find(name)
+       @list.find { |store| store["name"] == name }
+--   end
+--   
+     def names
+       @list.collect { |store| store["name"] }
+--   end
+--   
+     def remove(names)
+       removed = []
+       @list.reject! do |store| 
+         if names.include?(store["name"])
+           removed << store
+           true
+--       end
+--     end
+       write
+       removed
+--   end
+--   
+     private
+--   
+     def write
+       File.open(FILENAME, "w") { |f| f.puts(JSON.generate(@list)) }
+--   end
+--   
+     def add_item(db_store)
+       replace(db_store) || insert(db_store)
+--   end
+--   
+     def replace(db_store)
+       if i = @list.find_index { |item| item["name"] == db_store.name }
+         @list[i] = catalog_entry(db_store)
+--     end
+--   end
+--   
+     def insert(db_store)
+       @list.insert(0, catalog_entry(db_store))
+--   end
+--     
+     def catalog_entry(db_store)
+--     {
+--       name: db_store.name, 
+--       filename: db_store.filename, 
+--       migration: db_store.migration,
+--       created: Time.now.strftime("%D %I:%M %p")
+       }
+--   end
+--   
+     def setup_filesystem
+       FileUtils.mkdir_p(STORAGE_DIR)
+       FileUtils.touch(FILENAME)
+--   end
+-- end
+
+================================================================================
+ ./app/controllers/db_stores_controller.rb
+================================================================================
+   class DbStoresController < ApplicationController
+     skip_filter *_process_action_callbacks.map(&:filter)
+     before_filter :set_db_store_active
+--   
+     def create
+!!     @db_store = DbStorage.new(params[:db_store])
+!!     @db_store.write
+--   end
+--   
+     def restore
+!!     DbStorage.restore(params[:db_store])
+--   end
+--   
+     def destroy
+!!     DbStorage.destroy(params[:names])
+--   end
+--   
+     private
+--   
+     def set_db_store_active
+!!     @db_store_active = true
+--   end
+-- end
+
+================================================================================
+ ./app/helpers/db_stores_helper.rb
+================================================================================
+   module DbStoresHelper
+     def db_store_head
+!!     render "/db_stores/head"
+--   end
+--   
+     def db_store_body
+!!     render "/db_stores/body"
+--   end
+-- end
+
+================================================================================
+ ./config/routes.rb
+================================================================================
+   Rails.application.routes.draw do
+     post "/db_stores" => "db_stores#create"
+     post "/db_stores/restore" => "db_stores#restore"
+     post "/db_stores/destroy" => "db_stores#destroy"
+-- end
+
+================================================================================
+ ./lib/db_store.rb
+================================================================================
+   require "db_store/engine"
+-- 
+   module DbStore
+-- end
+
+================================================================================
+ ./lib/db_store/engine.rb
+================================================================================
+   module DbStore
+     class Engine < ::Rails::Engine
+--   end
+-- end
+
+================================================================================
+ ./spec/classes/db_storage_spec.rb
+================================================================================
+   require 'spec_helper'
+-- 
+   describe DbStorage do  
+     context "initializing a new db_store" do
+       before do
+         @db_store = DbStorage.new(name: "Foo Bar")
+         Timecop.freeze
+         @now = Time.now.strftime("%D %I:%M %p")
+--     end
+       subject { @db_store }
+       it("stores the name") { @db_store.name.should eq("Foo Bar") }
+       it "should make a db_store directory" do
+         File.directory?("#{Rails.root}/db_store_test").should eq(true)
+--     end
+       it "should call mysqldump" do
+         DbStorage.should_receive("system").with(/mysqldump/).and_return(true)
+         @db_store.write
+--     end
+       context "after writing" do
+         before do 
+           @db_store.write
+           @file_path = "#{Rails.root}/db_store_test/foobar.sql"
+           @catalog_path = "#{Rails.root}/db_store_test/catalog.txt"
+--       end
+         it "should destroy a store" do
+           DbStorage.destroy(["Foo Bar"])
+           File.exist?(@file_path).should eq(false)
+           expect(DbStorage.catalog.list.count).to eq(0)
+--       end
+         it "should create a sql file" do
+           File.exist?(@file_path).should eq(true)
+           lines = File.readlines(@file_path)
+           lines.count.should_not eq(0)
+--       end
+         it "should create a file to store the catalog" do
+           File.exist?(@catalog_path).should eq(true)
+--       end
+         it "should put an entry in the catalog" do
+           catalog = DbStorage.catalog.list
+           expect(catalog.count).to eq(1)
+           catalog[0].keys.should eq(["name", "filename", "migration", "created"])
+           catalog[0]["name"].should eq("Foo Bar")
+           catalog[0]["created"].should eq(@now)
+           catalog[0]["filename"].should eq("foobar.sql")
+           catalog[0]["migration"].should eq(ActiveRecord::Migrator.current_version)
+--       end
+         it "should add another item to the catalog" do
+           db_store = DbStorage.new(name: "Biz Bam")
+           db_store.write
+           catalog = DbStorage.catalog.list
+           expect(catalog.count).to eq(2)
+           catalog[0]["name"].should eq("Biz Bam")
+           catalog[1]["name"].should eq("Foo Bar")
+--       end
+         it "should return a list of the names in the catalog" do
+           DbStorage.names.should eq(["Foo Bar"])
+--       end
+         it "should replace a duplicate named item in the catalog" do
+           db_store = DbStorage.new(name: "Foo Bar")
+           db_store.write
+           catalog = DbStorage.catalog.list
+           expect(catalog.length).to eq(1)
+           expect(catalog[0]["name"]).to eq("Foo Bar")
+--       end
+         it "should restore the database" do
+           DbStorage.should_receive("system").with(/mysql /).and_return(true)
+           DbStorage.restore(name: "Foo Bar")
+--       end
+         it "shouldn't run migration when sql is current" do
+--         # DbStorage.should_not_receive(:migrate)
+--         # DbStorage.restore(name: "Foo Bar")
+--       end
+         it "should run migration when sql is stale" do
+--         # file = File.read(@catalog_path)
+--         # migration = ActiveRecord::Migrator.current_version.to_s
+--         # File.open(@catalog_path, "w") { |f| f.puts file.gsub(migration, "111") }
+--         # # Rake::Task["db:migrate"].should_receive(:invoke)
+--         # DbStorage.should_receive(:migrate)
+--         # DbStorage.restore(name: "Foo Bar")
+--       end
+--     end
+--   end
+     after do
+       FileUtils.rm Dir.glob("#{Rails.root}/db_store_test/*")
+       Dir.rmdir("#{Rails.root}/db_store_test")
+--   end
+-- end
+
+================================================================================
+ ./test/dummy/app/controllers/application_controller.rb
+================================================================================
+   class ApplicationController < ActionController::Base
+     protect_from_forgery
+-- end
+
+================================================================================
+ ./test/dummy/app/controllers/foos_controller.rb
+================================================================================
+   class FoosController < ApplicationController
+     def index
+--   end
+-- end
+
+================================================================================
+ ./test/dummy/app/helpers/application_helper.rb
+================================================================================
+   module ApplicationHelper
+-- end
+
+================================================================================
+ ./test/dummy/app/helpers/foos_helper.rb
+================================================================================
+   module FoosHelper
+-- end
+
+================================================================================
+ ./test/dummy/config/application.rb
+================================================================================
+   require File.expand_path('../boot', __FILE__)
+-- 
+   require 'rails/all'
+-- 
+   Bundler.require(*Rails.groups)
+   require "db_store"
+-- 
+   module Dummy
+     class Application < Rails::Application
+--     # Settings in config/environments/* take precedence over those specified here.
+--     # Application configuration should go into files in config/initializers
+--     # -- all .rb files in that directory are automatically loaded.
+-- 
+--     # Custom directories with classes and modules you want to be autoloadable.
+--     # config.autoload_paths += %W(#{config.root}/extras)
+-- 
+--     # Only load the plugins named here, in the order given (default is alphabetical).
+--     # :all can be used as a placeholder for all plugins not explicitly named.
+--     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
+-- 
+--     # Activate observers that should always be running.
+--     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+-- 
+--     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+--     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+--     # config.time_zone = 'Central Time (US & Canada)'
+-- 
+--     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+--     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+--     # config.i18n.default_locale = :de
+-- 
+--     # Configure the default encoding used in templates for Ruby 1.9.
+       config.encoding = "utf-8"
+-- 
+--     # Configure sensitive parameters which will be filtered from the log file.
+       config.filter_parameters += [:password]
+-- 
+--     # Enable escaping HTML in JSON.
+       config.active_support.escape_html_entities_in_json = true
+-- 
+--     # Use SQL instead of Active Record's schema dumper when creating the database.
+--     # This is necessary if your schema can't be completely dumped by the schema dumper,
+--     # like if you have constraints or database-specific column types
+--     # config.active_record.schema_format = :sql
+-- 
+--     # Enforce whitelist mode for mass assignment.
+--     # This will create an empty whitelist of attributes available for mass-assignment for all models
+--     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
+--     # parameters by using an attr_accessible or attr_protected declaration.
+       config.active_record.whitelist_attributes = true
+-- 
+--     # Enable the asset pipeline
+       config.assets.enabled = true
+-- 
+--     # Version of your assets, change this if you want to expire all your assets
+       config.assets.version = '1.0'
+--   end
+-- end
+-- 
+
+================================================================================
+ ./test/dummy/config/boot.rb
+================================================================================
+   require 'rubygems'
+   gemfile = File.expand_path('../../../../Gemfile', __FILE__)
+-- 
+   if File.exist?(gemfile)
+     ENV['BUNDLE_GEMFILE'] = gemfile
+     require 'bundler'
+     Bundler.setup
+-- end
+-- 
+   $:.unshift File.expand_path('../../../../lib', __FILE__)
+
+================================================================================
+ ./test/dummy/config/environment.rb
+================================================================================
+-- # Load the rails application
+   require File.expand_path('../application', __FILE__)
+-- 
+-- # Initialize the rails application
+   Dummy::Application.initialize!
+
+================================================================================
+ ./test/dummy/config/environments/test.rb
+================================================================================
+   Dummy::Application.configure do
+--   # Settings specified here will take precedence over those in config/application.rb
+-- 
+--   # The test environment is used exclusively to run your application's
+--   # test suite. You never need to work with it otherwise. Remember that
+--   # your test database is "scratch space" for the test suite and is wiped
+--   # and recreated between test runs. Don't rely on the data there!
+     config.cache_classes = true
+-- 
+--   # Configure static asset server for tests with Cache-Control for performance
+     config.serve_static_assets = true
+     config.static_cache_control = "public, max-age=3600"
+-- 
+--   # Log error messages when you accidentally call methods on nil
+     config.whiny_nils = true
+-- 
+--   # Show full error reports and disable caching
+     config.consider_all_requests_local       = true
+     config.action_controller.perform_caching = false
+-- 
+--   # Raise exceptions instead of rendering exception templates
+     config.action_dispatch.show_exceptions = false
+-- 
+--   # Disable request forgery protection in test environment
+     config.action_controller.allow_forgery_protection    = false
+-- 
+--   # Tell Action Mailer not to deliver emails to the real world.
+--   # The :test delivery method accumulates sent emails in the
+--   # ActionMailer::Base.deliveries array.
+     config.action_mailer.delivery_method = :test
+-- 
+--   # Raise exception on mass assignment protection for Active Record models
+     config.active_record.mass_assignment_sanitizer = :strict
+-- 
+--   # Print deprecation notices to the stderr
+     config.active_support.deprecation = :stderr
+-- end
+
+================================================================================
+ ./test/dummy/config/initializers/backtrace_silencers.rb
+================================================================================
+-- # Be sure to restart your server when you modify this file.
+-- 
+-- # You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+-- # Rails.backtrace_cleaner.add_silencer { |line| line =~ /my_noisy_library/ }
+-- 
+-- # You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+-- # Rails.backtrace_cleaner.remove_silencers!
+
+================================================================================
+ ./test/dummy/config/initializers/inflections.rb
+================================================================================
+-- # Be sure to restart your server when you modify this file.
+-- 
+-- # Add new inflection rules using the following format
+-- # (all these examples are active by default):
+-- # ActiveSupport::Inflector.inflections do |inflect|
+-- #   inflect.plural /^(ox)$/i, '\1en'
+-- #   inflect.singular /^(ox)en/i, '\1'
+-- #   inflect.irregular 'person', 'people'
+-- #   inflect.uncountable %w( fish sheep )
+-- # end
+-- #
+-- # These inflection rules are supported but not enabled by default:
+-- # ActiveSupport::Inflector.inflections do |inflect|
+-- #   inflect.acronym 'RESTful'
+-- # end
+
+================================================================================
+ ./test/dummy/config/initializers/mime_types.rb
+================================================================================
+-- # Be sure to restart your server when you modify this file.
+-- 
+-- # Add new mime types for use in respond_to blocks:
+-- # Mime::Type.register "text/richtext", :rtf
+-- # Mime::Type.register_alias "text/html", :iphone
+
+================================================================================
+ ./test/dummy/config/initializers/secret_token.rb
+================================================================================
+-- # Be sure to restart your server when you modify this file.
+-- 
+-- # Your secret key for verifying the integrity of signed cookies.
+-- # If you change this key, all old signed cookies will become invalid!
+-- # Make sure the secret is at least 30 characters and all random,
+-- # no regular words or you'll be exposed to dictionary attacks.
+   Dummy::Application.config.secret_token = 'dfb5610161c45b396e653d3a96b82b45d6df3cd92f061862b873f635d3a03e225a20269935d24c0b1bf42ef742b1d932d9cdff77ec910108f1e70cd20a6645f9'
+
+================================================================================
+ ./test/dummy/config/initializers/session_store.rb
+================================================================================
+-- # Be sure to restart your server when you modify this file.
+-- 
+   Dummy::Application.config.session_store :cookie_store, key: '_dummy_session'
+-- 
+-- # Use the database for sessions instead of the cookie-based default,
+-- # which shouldn't be used to store highly confidential information
+-- # (create the session table with "rails generate session_migration")
+-- # Dummy::Application.config.session_store :active_record_store
+
+================================================================================
+ ./test/dummy/config/initializers/wrap_parameters.rb
+================================================================================
+-- # Be sure to restart your server when you modify this file.
+-- #
+-- # This file contains settings for ActionController::ParamsWrapper which
+-- # is enabled by default.
+-- 
+-- # Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+   ActiveSupport.on_load(:action_controller) do
+     wrap_parameters format: [:json]
+-- end
+-- 
+-- # Disable root element in JSON by default.
+   ActiveSupport.on_load(:active_record) do
+     self.include_root_in_json = false
+-- end
+
+================================================================================
+ ./test/dummy/config/routes.rb
+================================================================================
+   Dummy::Application.routes.draw do
+--   # The priority is based upon order of creation:
+--   # first created -> highest priority.
+-- 
+--   # Sample of regular route:
+--   #   match 'products/:id' => 'catalog#view'
+--   # Keep in mind you can assign values other than :controller and :action
+-- 
+--   # Sample of named route:
+--   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+--   # This route can be invoked with purchase_url(:id => product.id)
+-- 
+--   # Sample resource route (maps HTTP verbs to controller actions automatically):
+--   #   resources :products
+-- 
+--   # Sample resource route with options:
+--   #   resources :products do
+--   #     member do
+--   #       get 'short'
+--   #       post 'toggle'
+--   #     end
+--   #
+--   #     collection do
+--   #       get 'sold'
+--   #     end
+--   #   end
+-- 
+--   # Sample resource route with sub-resources:
+--   #   resources :products do
+--   #     resources :comments, :sales
+--   #     resource :seller
+--   #   end
+-- 
+--   # Sample resource route with more complex sub-resources
+--   #   resources :products do
+--   #     resources :comments
+--   #     resources :sales do
+--   #       get 'recent', :on => :collection
+--   #     end
+--   #   end
+-- 
+--   # Sample resource route within a namespace:
+--   #   namespace :admin do
+--   #     # Directs /admin/products/* to Admin::ProductsController
+--   #     # (app/controllers/admin/products_controller.rb)
+--   #     resources :products
+--   #   end
+-- 
+--   # You can have the root of your site routed with "root"
+--   # just remember to delete public/index.html.
+     resources :foos
+     root :to => 'foos#index'
+-- 
+--   # See how all your routes lay out with "rake routes"
+-- 
+--   # This is a legacy wild controller route that's not recommended for RESTful applications.
+--   # Note: This route will make all actions in every controller accessible via GET requests.
+--   # match ':controller(/:action(/:id))(.:format)'
+-- end
+

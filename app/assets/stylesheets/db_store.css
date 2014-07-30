@@ -16,3 +16,4 @@
 #db_store #db_store_edit_list { text-decoration: underline; color: #0000EE; cursor: pointer; }
 #db_store #db_store_list { display: none; }
 #db_store .db_store_stale_warning { display: none; color: #900000; font-style: italic; size: 12pt; }
+#db_store .db_store_stale_warning.db_store_active { display: inline; }

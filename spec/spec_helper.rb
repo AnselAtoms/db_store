@@ -15,6 +15,10 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 ENV["RAILS_ENV"] ||= 'test'
+require "simplecov"
+require 'metric_fu/metrics/rcov/simplecov_formatter'
+SimpleCov.formatter = SimpleCov::Formatter::MetricFu
+SimpleCov.start
 require File.expand_path("../../test/dummy/config/environment", __FILE__)
 
 RSpec.configure do |config|
