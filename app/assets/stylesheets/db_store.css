@@ -1,0 +1,18 @@
+#db_store { 
+	display: none; 
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	background-color: #fff;
+	border: 1px solid #777;
+	color: #444;
+	size: 14pt;
+	display: none;
+	padding: 5px 10px;
+}
+#db_store.db_store_active { display: block; }
+#db_store_title { font-weight: bold; size: 16pt; }
+#db_store #db_store_message { float: right; color: #999; size: 12pt; font-style: italic; }
+#db_store #db_store_edit_list { text-decoration: underline; color: #0000EE; cursor: pointer; }
+#db_store #db_store_list { display: none; }
+#db_store .db_store_stale_warning { display: none; color: #900000; font-style: italic; size: 12pt; }

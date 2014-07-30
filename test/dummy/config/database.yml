@@ -1,0 +1,11 @@
+test:
+  username: root
+  password: sIPF15h
+  adapter: mysql
+  database: db_store_dummy_test
+
+development:
+  username: root
+  password: sIPF15h
+  adapter: mysql
+  database: db_store_dummy

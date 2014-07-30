@@ -1,0 +1,4 @@
+$("#db_store").replaceWith("<%= escape_javascript render(partial: 'body') %>");
+DBStore.restoreAjax();
+DBStore.showList();
+DBStore.message("Stores deleted");
