@@ -1,19 +1,16 @@
 function DBStore() {
-	self.env = undefined;
 	self.lastShift = undefined;
 	self.doublePressTime = 200;
 	self.lastChecked = undefined;
-	
+
 	this.init = function() {
 		var dbstore = this;
 		$(document).ready(function(){
-			if (dbstore.env == "development") {
-				dbstore.bindOpenDBStore();
-				dbstore.bindButtons();
-				dbstore.editList();
-				dbstore.shiftClick();
-				dbstore.alertStale();
-			}
+      dbstore.bindOpenDBStore();
+      dbstore.bindButtons();
+      dbstore.editList();
+      dbstore.shiftClick();
+      dbstore.alertStale();
 		});
 	}
 	this.bindOpenDBStore = function() {

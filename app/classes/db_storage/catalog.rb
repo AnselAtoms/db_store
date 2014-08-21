@@ -1,6 +1,4 @@
 class DbStorage::Catalog
-  attr_accessor :list
-  
   STORAGE_DIR = Rails.env.test? ? "#{Rails.root}/db_store_test" : "#{Rails.root}/db_store"
   FILENAME = "#{STORAGE_DIR}/catalog.txt"
   
@@ -17,6 +15,10 @@ class DbStorage::Catalog
   def read
     return @list = [] if File.zero?(FILENAME)
     @list = JSON.parse(File.read(FILENAME))
+  end
+
+  def list
+    @list || []
   end
   
   def find(name)

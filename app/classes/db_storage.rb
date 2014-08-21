@@ -2,6 +2,14 @@ class DbStorage
   attr_accessor :name, :filename, :migration
   
   STORAGE_DIR = Rails.env.test? ? "#{Rails.root}/db_store_test" : "#{Rails.root}/db_store"
+
+  def self.enabled?
+    @@enabled
+  end
+
+  def self.enable
+    @@enabled = true
+  end
   
   def initialize(params)
     @name = params[:name]
