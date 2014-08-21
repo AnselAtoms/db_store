@@ -41,6 +41,14 @@ class DbStorage::Catalog
     removed
   end
 
+  def stale?(index)
+    list[index] && list[index]["migration"] != current_migration
+  end
+
+  def current_migration
+    ActiveRecord::Migrator.current_version
+  end
+
   private
 
   def write

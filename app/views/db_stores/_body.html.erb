@@ -14,15 +14,15 @@
     <% end %>
     <%= form_tag "/db_stores/restore" do %>
       <select id="db_store_name" name="db_store[name]">
-        <% catalog.list.each do |store| %>
+        <% catalog.list.each_with_index do |store, i| %>
           <option value="<%= store["name"] %>"
-                  class="<%= 'db_store_stale' if store["migration"] != db_store_current_migration %>">
+                  class="<%= 'db_store_stale' if catalog.stale?(i) %>">
             <%= store["name"] %>
           </option>
         <% end %>
       </select>
       <button>Load</button>
-      <span class="db_store_stale_warning <%= 'db_store_active' if catalog.list[0]["migration"] != db_store_current_migration %>">Stale!</span>
+      <span class="db_store_stale_warning <%= 'db_store_active' if catalog.stale?(0) %>">Stale!</span>
     <% end %>
     <span id="db_store_edit_list">Edit list</span>
     <div id="db_store_list">
@@ -34,12 +34,12 @@
             <th>Created</th>
             <th>Status</th>
           </tr>
-          <% catalog.list.each do |store| %>
+          <% catalog.list.each_with_index do |store, i| %>
             <tr>
               <td><%= check_box_tag "names[]", store["name"] %></td>
               <td><%= store["name"] %></td>
               <td><%= store["created"] %></td>
-              <td><%= "Stale" if store["migration"] != db_store_current_migration %></td>
+              <td><%= "Stale" if catalog.stale?(i) %></td>
             </tr>
           <% end %>
         </table>
