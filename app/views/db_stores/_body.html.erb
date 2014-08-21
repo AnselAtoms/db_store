@@ -1,4 +1,4 @@
-<% if Rails.env.development? %>
+<% if DbStore::DbStorage.enabled? %>
   <% catalog = DbStorage.catalog %>
   <% db_store_current_migration = ActiveRecord::Migrator.current_version %>
   <div id="db_store" class="<%= 'db_store_active' if @db_store_active %>">

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    db_store (0.0.1)
+    db_store (0.0.3)
       jquery-rails
       rails (~> 3.2.19)
 
