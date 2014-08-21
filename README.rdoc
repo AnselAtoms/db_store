@@ -6,7 +6,7 @@ db_store
 
 to enable add to config/environments/development.rb (and any other environments you want):
 
-DbStore.enable
+DbStorage.enable
 
 You may have to require the file
 require ...../db_storage (?)
