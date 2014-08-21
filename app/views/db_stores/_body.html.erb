@@ -15,7 +15,7 @@
     <%= form_tag "/db_stores/restore" do %>
       <select id="db_store_name" name="db_store[name]">
         <% catalog.list.each do |store| %>
-          <option value="<%= store["name"] %>" 
+          <option value="<%= store["name"] %>"
                   class="<%= 'db_store_stale' if store["migration"] != db_store_current_migration %>">
             <%= store["name"] %>
           </option>

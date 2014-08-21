@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe DbStorage do  
+describe DbStorage do
   context "initializing a new db_store" do
     before do
       @db_store = DbStorage.new(name: "Foo Bar")
@@ -17,7 +17,7 @@ describe DbStorage do
       @db_store.write
     end
     context "after writing" do
-      before do 
+      before do
         @db_store.write
         @file_path = "#{Rails.root}/db_store_test/foobar.sql"
         @catalog_path = "#{Rails.root}/db_store_test/catalog.txt"
