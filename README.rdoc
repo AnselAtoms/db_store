@@ -10,3 +10,5 @@ DbStore.enable
 
 You may have to require the file
 require ...../db_storage (?)
+
+at this point, you must have mysql and mysqldump installed to make this work.
